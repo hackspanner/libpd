@@ -40,3 +40,23 @@ libs/libpdcsharp.*
 
 # java
 java-build/*
+
+# msvc
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+.vs/
+.meta
+.obj
+.pch
+.pdb
+.pidb
+*.opendb
+*.VC.db
+ipch/
