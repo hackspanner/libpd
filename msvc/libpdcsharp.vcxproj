@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DFF1C4B8-256B-4177-A5D8-7DA4FFD2677E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libpdcsharp</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBPDCSHARP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>PD;PD_INTERNAL;LIBPD_EXTRA;USEAPI_DUMMY;_DEBUG;_WINDOWS;_USRDLL;LIBPDCSHARP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\pure-data\src;..\libpd_wrapper;.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>./lib/x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>pthreadVC2.lib;wsock32.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBPDCSHARP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>PD;PD_INTERNAL;LIBPD_EXTRA;USEAPI_DUMMY;NDEBUG;_WINDOWS;_USRDLL;LIBPDCSHARP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\pure-data\src;..\libpd_wrapper;.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>./lib/x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>pthreadVC2.lib;wsock32.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\libpd_wrapper\s_libpdmidi.c" />
+    <ClCompile Include="..\libpd_wrapper\x_libpdreceive.c" />
+    <ClCompile Include="..\libpd_wrapper\z_hooks.c" />
+    <ClCompile Include="..\libpd_wrapper\z_libpd.c" />
+    <ClCompile Include="..\pure-data\extra\bob~\bob~.c" />
+    <ClCompile Include="..\pure-data\extra\bonk~\bonk~.c" />
+    <ClCompile Include="..\pure-data\extra\choice\choice.c" />
+    <ClCompile Include="..\pure-data\extra\fiddle~\fiddle~.c" />
+    <ClCompile Include="..\pure-data\extra\loop~\loop~.c" />
+    <ClCompile Include="..\pure-data\extra\lrshift~\lrshift~.c" />
+    <ClCompile Include="..\pure-data\extra\pique\pique.c" />
+    <ClCompile Include="..\pure-data\extra\sigmund~\sigmund~.c" />
+    <ClCompile Include="..\pure-data\extra\stdout\stdout.c" />
+    <ClCompile Include="..\pure-data\src\d_arithmetic.c" />
+    <ClCompile Include="..\pure-data\src\d_array.c" />
+    <ClCompile Include="..\pure-data\src\d_ctl.c" />
+    <ClCompile Include="..\pure-data\src\d_dac.c" />
+    <ClCompile Include="..\pure-data\src\d_delay.c" />
+    <ClCompile Include="..\pure-data\src\d_fft.c" />
+    <ClCompile Include="..\pure-data\src\d_fft_fftsg.c" />
+    <ClCompile Include="..\pure-data\src\d_filter.c" />
+    <ClCompile Include="..\pure-data\src\d_global.c" />
+    <ClCompile Include="..\pure-data\src\d_math.c" />
+    <ClCompile Include="..\pure-data\src\d_misc.c" />
+    <ClCompile Include="..\pure-data\src\d_osc.c" />
+    <ClCompile Include="..\pure-data\src\d_resample.c" />
+    <ClCompile Include="..\pure-data\src\d_soundfile.c" />
+    <ClCompile Include="..\pure-data\src\d_ugen.c" />
+    <ClCompile Include="..\pure-data\src\g_all_guis.c" />
+    <ClCompile Include="..\pure-data\src\g_array.c" />
+    <ClCompile Include="..\pure-data\src\g_bang.c" />
+    <ClCompile Include="..\pure-data\src\g_canvas.c" />
+    <ClCompile Include="..\pure-data\src\g_clone.c" />
+    <ClCompile Include="..\pure-data\src\g_editor.c" />
+    <ClCompile Include="..\pure-data\src\g_graph.c" />
+    <ClCompile Include="..\pure-data\src\g_guiconnect.c" />
+    <ClCompile Include="..\pure-data\src\g_hdial.c" />
+    <ClCompile Include="..\pure-data\src\g_hslider.c" />
+    <ClCompile Include="..\pure-data\src\g_io.c" />
+    <ClCompile Include="..\pure-data\src\g_mycanvas.c" />
+    <ClCompile Include="..\pure-data\src\g_numbox.c" />
+    <ClCompile Include="..\pure-data\src\g_readwrite.c" />
+    <ClCompile Include="..\pure-data\src\g_rtext.c" />
+    <ClCompile Include="..\pure-data\src\g_scalar.c" />
+    <ClCompile Include="..\pure-data\src\g_template.c" />
+    <ClCompile Include="..\pure-data\src\g_text.c" />
+    <ClCompile Include="..\pure-data\src\g_toggle.c" />
+    <ClCompile Include="..\pure-data\src\g_traversal.c" />
+    <ClCompile Include="..\pure-data\src\g_vdial.c" />
+    <ClCompile Include="..\pure-data\src\g_vslider.c" />
+    <ClCompile Include="..\pure-data\src\g_vumeter.c" />
+    <ClCompile Include="..\pure-data\src\m_atom.c" />
+    <ClCompile Include="..\pure-data\src\m_binbuf.c" />
+    <ClCompile Include="..\pure-data\src\m_class.c" />
+    <ClCompile Include="..\pure-data\src\m_conf.c" />
+    <ClCompile Include="..\pure-data\src\m_glob.c" />
+    <ClCompile Include="..\pure-data\src\m_memory.c" />
+    <ClCompile Include="..\pure-data\src\m_obj.c" />
+    <ClCompile Include="..\pure-data\src\m_pd.c" />
+    <ClCompile Include="..\pure-data\src\m_sched.c" />
+    <ClCompile Include="..\pure-data\src\s_audio.c" />
+    <ClCompile Include="..\pure-data\src\s_audio_dummy.c" />
+    <ClCompile Include="..\pure-data\src\s_file.c" />
+    <ClCompile Include="..\pure-data\src\s_inter.c" />
+    <ClCompile Include="..\pure-data\src\s_loader.c" />
+    <ClCompile Include="..\pure-data\src\s_main.c" />
+    <ClCompile Include="..\pure-data\src\s_path.c" />
+    <ClCompile Include="..\pure-data\src\s_print.c" />
+    <ClCompile Include="..\pure-data\src\s_utf8.c" />
+    <ClCompile Include="..\pure-data\src\x_acoustics.c" />
+    <ClCompile Include="..\pure-data\src\x_arithmetic.c" />
+    <ClCompile Include="..\pure-data\src\x_array.c" />
+    <ClCompile Include="..\pure-data\src\x_connective.c" />
+    <ClCompile Include="..\pure-data\src\x_gui.c" />
+    <ClCompile Include="..\pure-data\src\x_interface.c" />
+    <ClCompile Include="..\pure-data\src\x_list.c" />
+    <ClCompile Include="..\pure-data\src\x_midi.c" />
+    <ClCompile Include="..\pure-data\src\x_misc.c" />
+    <ClCompile Include="..\pure-data\src\x_net.c" />
+    <ClCompile Include="..\pure-data\src\x_scalar.c" />
+    <ClCompile Include="..\pure-data\src\x_text.c" />
+    <ClCompile Include="..\pure-data\src\x_time.c" />
+    <ClCompile Include="..\pure-data\src\x_vexp.c" />
+    <ClCompile Include="..\pure-data\src\x_vexp_fun.c" />
+    <ClCompile Include="..\pure-data\src\x_vexp_if.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
